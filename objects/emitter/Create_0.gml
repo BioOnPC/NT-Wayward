@@ -1,0 +1,1 @@
+sound = audio_emitter_create();
