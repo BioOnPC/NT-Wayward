@@ -1,20 +1,19 @@
 function scrSkills() {
-	var g = global;
-	
-	g.mut_list[mut_none] = {
+	global.mut_list[mut_none] = {
 		name: "NOTHING",
 		text: "GET NOTHING",
 		elig: 0,
 		ttip: ""
 	};
 	
-	g.mut_list[mut_rhino_skin] = {
+	global.mut_list[mut_rhino_skin] = {
 		name: "RHINO SKIN",
 		text: "+4 MAX HP",
 		elig: 0,
 		ttip: ""
 	};
 
+	/*
 	skill_name[1] = "RHINO#SKIN"
 	skill_text[1] = "+4 MAX HP"
 
@@ -60,7 +59,7 @@ function scrSkills() {
 	dir = 0
 	repeat(maxskill+1)
 	{skill_got[dir] = 0
-	dir += 1}
+	dir += 1}*/
 
 
 }

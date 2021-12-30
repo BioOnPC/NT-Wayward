@@ -1,0 +1,12 @@
+- Characters
+-- System for automatically fetching important character info
+-- System for actives
+
+- Mutations
+-- System for checking any object to have a mutation, just typically check for player
+-- Leveling + level up screen
+
+- Levels
+-- Area Generation, with something more robust than NTT's system for determining important area info
+-- room generation? special and randomly placed areas that have unique patterns
+-- 

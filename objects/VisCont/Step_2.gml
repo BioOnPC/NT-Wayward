@@ -8,5 +8,4 @@ surface_set_target(shad);
 draw_clear_alpha(c_black, 0);
 
 scrShadows();
-
 surface_reset_target();

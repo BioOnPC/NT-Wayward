@@ -1,0 +1,1 @@
+move_collide_adv(movetyp);

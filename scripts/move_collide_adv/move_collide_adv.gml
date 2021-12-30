@@ -11,7 +11,6 @@ function move_collide_adv(advanced){
 	
 	 // fancy collisions oooo
 	if(advanced = true) {
-		trace(xfac);
 		 // Horizontal
 		for(var ix = 0; ix < abs(xspd); ix += xfac) {
 		    if (!place_meeting(x + (sign(xspd) * xfac), y, Wall)) {
@@ -21,8 +20,6 @@ function move_collide_adv(advanced){
 		    else {
 				if(variable_instance_exists(self, "on_wall")) on_wall(true);
 				else xspd = 0;
-				
-				
 		        break;
 		    }
 		}

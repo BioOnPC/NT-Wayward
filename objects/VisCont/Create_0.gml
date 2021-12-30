@@ -6,6 +6,8 @@ surface_set_target(shad);
 draw_clear_alpha(c_black,0);
 surface_reset_target();
 
+depth_grid = ds_grid_create(1, 1);
+
 target = noone;
 xview = 0; 
 yview = 0;

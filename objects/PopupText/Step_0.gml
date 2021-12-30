@@ -1,0 +1,1 @@
+image_xscale = string_length(text) * 5;

@@ -13,6 +13,8 @@ function macros_set(){
 	#macro typ_shell			 2
 	#macro typ_bolt				 3
 	#macro typ_explo			 4
+	#macro typ_fuel			 5
+	#macro typ_waste			 6
 	
 	 // Muts
 	#macro mut_none				 0

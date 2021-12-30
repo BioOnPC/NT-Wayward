@@ -8,3 +8,4 @@ text = "";
 
 instance_create(x, y, VisCont);
 
+hitme_create(0, 0, Player);

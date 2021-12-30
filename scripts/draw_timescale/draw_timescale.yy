@@ -6,7 +6,7 @@
     "path": "folders/Scripts/base scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "hitme_default",
+  "name": "draw_timescale",
   "tags": [],
   "resourceType": "GMScript",
 }
