@@ -1,9 +1,9 @@
 function scrFire(_wep, _ang) {
 	switch (_wep) {	
 		case "revolver": 
-			projectile_create(x, y, Bullet, _ang, 10);
+			projectile_create(x + lengthdir_x(3, _ang), y + lengthdir_y(3, _ang), Bullet, _ang, 10);
 			snd_play(sndRevolver, 0.03, 1 + random(0.3), 0);
-			weapon_post(2, 8 + random(4));
+			weapon_post(2, 4 + random(4));
 		break;
 		
 		default: 

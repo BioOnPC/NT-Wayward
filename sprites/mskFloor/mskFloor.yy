@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"mskFloor","path":"sprites/mskFloor/mskFloor.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "mskFloor",
     "tags": [],
     "resourceType": "GMSequence",

@@ -9,5 +9,5 @@ function snd_play(snd, volume, pitch, loop){
 	if(variable_instance_exists(self, "z")) _z = z;
 	audio_sound_gain(snd, volume, 0);
 	audio_sound_pitch(snd, pitch);
-	audio_play_sound_at(snd, x, y, _z, 120, 320, 0, loop, 1)
+	audio_play_sound_at(snd, x, y, _z, 120, 320, 0, loop, 1);
 }

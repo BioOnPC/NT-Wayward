@@ -1,7 +1,9 @@
+creator = noone;
 vspeed = -0.75;
 y -= 8;
 time = 10;
 text = "";
+font = fntN;
 
 height = 20;
 
@@ -18,8 +20,10 @@ done
 
 on_draw = function() {
 	if(visible) {
+		draw_set_font(font);
 		draw_set_halign(fa_middle);
 		draw_text_nt(x, y, text);
 		draw_set_halign(fa_left);
+		draw_set_font(fntN);
 	}
 }

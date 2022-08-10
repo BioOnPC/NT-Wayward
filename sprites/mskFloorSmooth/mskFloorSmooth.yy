@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"mskFloorSmooth","path":"sprites/mskFloorSmooth/mskFloorSmooth.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "mskFloorSmooth",
     "tags": [],
     "resourceType": "GMSequence",

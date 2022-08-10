@@ -8,6 +8,22 @@ with(VisCont) {
 	yview = other.y - (view_hport[0]/2);
 }
 
+with(pickup) {
+	if(point_distance(x, y, other.x, other.y) < pull and !target) {
+		target = other;
+	}
+}
+
+if(ammoflash) ammoflash -= ts;
+if(hpflash)   hpflash   -= ts;
+if(radflash)  radflash  -= ts;
+
+if(place_meeting(x, y, interactable)) interact = instance_nearest(x, y, interactable);
+else if(interact != noone) {
+	if(interact.target = self) interact.target = noone;
+	interact = noone;
+}
+
  // MOVEMENT STUFF
 var mh = keyboard_check(ord("A")) - keyboard_check(ord("D")),
 	mv = keyboard_check(ord("W")) - keyboard_check(ord("S"));
@@ -18,29 +34,33 @@ if(mv != 0 and vspeed < maxspd) motion_add(90 * mv, min(walkspeed, maxspd - abs(
 if(abs(hspeed) > maxspd) hspeed = maxspd * sign(hspeed);
 if(abs(vspeed) > maxspd) vspeed = maxspd * sign(vspeed);
 
-if(speed != 0) sprite_index = spr_walk; else sprite_index = spr_idle;
-
  // WEAPON STUFF
 spr_weap = wep.sprt;
 
 gunangle = point_direction(x, y, mouse_x, mouse_y);
-if(gunangle < 90 || gunangle > 270) right = 1;
-if(gunangle > 90 && gunangle < 270) right = -1;
-wkick = lerp(wkick, 0, 0.2 * ts);
 
 if(reload > 0) reload -= ts;
 
  // FIRING
-if(mouse_check_button_pressed(mb_left) or mouse_check_button_released(mb_left)) {
+if(mouse_check_button_pressed(mb_left)) {
 	if(ammo[wep.type] > 0) {
 		while(reload <= 0 and ammo[wep.type] >= wep.cost) {
 			ammo[wep.type] -= wep.cost;
 			player_fire(wep.name, gunangle);
 		}
 	}
-	else if(mouse_check_button_pressed(mb_left)) {
+	else if(mouse_check_button_pressed(mb_left) and !reload) {
+		spawn_popup(x, y, ammo[wep.type] = 0 ? "EMPTY!" : "NOT ENOUGH " + string_upper(string(global.typ[wep.type].name)) + "!");
 		snd_play(sndEmpty, 0.03, 1 + random(0.1), 0);
+		weapon_post(0, -2 - random(4));
+		reload += 4;
 	}
 }
 
-if(mouse_check_button_pressed(mb_right)) with(instance_create(mouse_x, mouse_y, PopupText)) text = string(global.current_frame);
+if(mouse_check_button_pressed(mb_right)) with(instance_create(mouse_x, mouse_y, HealthPickup)) {
+	zspeed += 3 + irandom(2);
+	motion_add(random(360), 2 + random(2));
+}
+
+if(keyboard_check_pressed(vk_add)) skill_apply(mut_rhino_skin, "pick", 1);
+if(keyboard_check_pressed(vk_subtract)) skill_apply(mut_rhino_skin, "lose", 1);

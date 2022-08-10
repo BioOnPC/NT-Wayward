@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"mskPopup","path":"sprites/mskPopup/mskPopup.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "mskPopup",
     "tags": [],
     "resourceType": "GMSequence",

@@ -5,7 +5,8 @@ function macros_set(){
 	#macro ts_anim (global.current_frame * image_speed) * ts
 
 	 // Races
-	#macro race_fish 1
+	#macro race_moth			 1
+	#macro race_hermit			 2
 	
 	 // Weps
 	#macro typ_melee			 0
@@ -13,7 +14,7 @@ function macros_set(){
 	#macro typ_shell			 2
 	#macro typ_bolt				 3
 	#macro typ_explo			 4
-	#macro typ_fuel			 5
+	#macro typ_scrap			 5
 	#macro typ_waste			 6
 	
 	 // Muts

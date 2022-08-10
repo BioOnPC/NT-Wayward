@@ -1,4 +1,4 @@
-/// @description Creates a hitme at a given position and initializes common variables.
+/// @description Creates a projectile at a given position and initializes common variables.
 /// @param x The x position the object will be created at.
 /// @param y The y position the object will be created at.
 /// @param obj The object to create an instance of.

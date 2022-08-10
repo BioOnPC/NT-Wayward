@@ -34,8 +34,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Friendlies",
-    "path": "folders/Objects/Projectiles/Friendlies.yy",
+    "name": "Default",
+    "path": "folders/Objects/Projectiles/Default.yy",
   },
   "resourceVersion": "1.0",
   "name": "Bullet",

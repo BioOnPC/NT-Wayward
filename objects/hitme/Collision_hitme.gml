@@ -1,0 +1,1 @@
+if(size <= other.size and maxspd > 0) motion_add(point_direction(other.x, other.y, x, y), min(maxspd - speed, 0.5));

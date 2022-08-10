@@ -2,7 +2,7 @@
 /// @param attribute
 /// @param val
 
-function weapon_get(att, val){
+function weapon_get(att, val = -1){
 	var wg = [];
 	
 	for(var i = 0; i < array_length(global.wep_list); i++) {

@@ -38,7 +38,7 @@ function scrWeapons() {
 		name: "explosives"
 	};
 	
-	global.typ[typ_fuel] = {
+	global.typ[typ_scrap] = {
 		ammo: 10,
 		amax: 55,
 		name: "fuel"

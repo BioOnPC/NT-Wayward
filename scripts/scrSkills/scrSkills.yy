@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+    "name": "Mutations",
+    "path": "folders/Scripts/Mutations.yy",
   },
   "resourceVersion": "1.0",
   "name": "scrSkills",

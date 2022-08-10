@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Bases",
+    "path": "folders/Objects/Bases.yy",
   },
   "resourceVersion": "1.0",
   "name": "emitter",

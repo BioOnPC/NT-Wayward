@@ -1,6 +1,8 @@
 /// @description  move_collide_adv(advanced)
 /// @param advanced
 function move_collide_adv(advanced){
+	zaxis_default();
+	
 	var xspd = hspeed * ts,
 		yspd = vspeed * ts,
 		xfac = max(abs(xspd * 0.1), 0.1),
