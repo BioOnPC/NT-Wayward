@@ -63,3 +63,69 @@ function scrSkills() {
 
 
 }
+
+function generateMut(){
+	return choose(mutRhinoSkin(), mutExtraFeet());
+}
+
+function addMut(_owner, _mut = noone, _amount = 1) {
+	if(_mut == noone){
+		_mut = generateMut();
+	}
+	_mut.amount = _amount;
+	_mut.on_pick(_owner, _mut);
+	if(variable_instance_exists(_owner, "mutations")) {
+		var mutFound = noone;
+		for(var i = 0; i < array_length(_owner.mutations); i++){
+			if(_owner.mutations[i].mutid == _mut.mutid && _mut.stackable == 1){
+				mutFound = i;
+			}
+		}
+		if(mutFound == noone){
+			array_push(_owner.mutations, _mut);
+			_mut.on_give(_owner, _mut);
+		}else{
+			mutations[mutFound].amount += _amount;
+			_mut.on_give(_owner, mutations[mutFound]);
+		}
+	}else{
+		_mut.on_give(_owner, _mut);
+		return _mut;
+	}
+}
+
+function removeMut(_owner, _mut, _amount = 1) {
+	if(_amount <= 0){
+		return 0;
+	}
+	if(variable_instance_exists(_owner, "mutations")) {
+		while(true){
+			var mutFound = noone;
+			for(var i = 0; i < array_length(_owner.mutations); i++){
+				if(_owner.mutations[i].mutid == _mut.mutid){
+					mutFound = i;
+				}
+			}
+			if(mutFound == noone){
+				return _amount;
+			}else{
+				var amnt = mutations[mutFound].amount;
+				mutations[mutFound].amount -= min(_amount, mutations[mutFound].amount);
+				_amount -= amnt;
+				_mut.on_lose(_owner, mutations[mutFound]);
+				if(mutations[mutFound].amount <= 0){
+					array_delete(mutations, mutFound, 1);
+				}
+				if(_amount <= 0){
+					return 0;
+				}
+			}
+		}
+	}
+}
+
+function mutDefaultEmpty(_owner, _mut) { }
+
+function mutDefaultDraw(_owner, _mut) { 
+	return _mut.hudspr;
+}

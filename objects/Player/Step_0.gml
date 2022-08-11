@@ -24,6 +24,10 @@ else if(interact != noone) {
 	interact = noone;
 }
 
+for(var i = 0; i < array_length(mutations); i++){
+	mutations[i].on_step(self, mutations[i]);
+}
+
  // MOVEMENT STUFF
 var mh = keyboard_check(ord("A")) - keyboard_check(ord("D")),
 	mv = keyboard_check(ord("W")) - keyboard_check(ord("S"));
@@ -62,5 +66,28 @@ if(mouse_check_button_pressed(mb_right)) with(instance_create(mouse_x, mouse_y, 
 	motion_add(random(360), 2 + random(2));
 }
 
-if(keyboard_check_pressed(vk_add)) skill_apply(mut_rhino_skin, "pick", 1);
-if(keyboard_check_pressed(vk_subtract)) skill_apply(mut_rhino_skin, "lose", 1);
+if(keyboard_check_pressed(vk_add)) {
+	addMut(self);
+}
+
+if(keyboard_check_pressed(ord("1"))) {
+	addMut(self, mutRhinoSkin());
+}
+if(keyboard_check_pressed(ord("2"))) {
+	addMut(self, mutExtraFeet());
+}
+
+if(keyboard_check_pressed(ord("9"))) {
+	addMut(self, mutRhinoSkin(), 4);
+}
+
+if(keyboard_check_pressed(vk_subtract) && array_length(mutations) > 0) {
+	var mut = mutations[0];
+	removeMut(self, mut);
+}
+if(keyboard_check_pressed(ord("0")) && array_length(mutations) > 0) {
+	var mut = mutations[0];
+	removeMut(self, mut, 2);
+}
+//if(keyboard_check_pressed(vk_add)) skill_apply(mut_rhino_skin, "pick", 1);
+//if(keyboard_check_pressed(vk_subtract)) skill_apply(mut_rhino_skin, "lose", 1);

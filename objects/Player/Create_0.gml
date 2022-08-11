@@ -35,6 +35,7 @@ radmax   = 60;
 level	 = 1;
 radflash = 0;
 skill    = [];
+mutations    = [];
 
 interact = noone;
 movetyp  = true;

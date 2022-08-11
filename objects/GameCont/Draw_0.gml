@@ -52,4 +52,18 @@ with(Player) {
 	 // HUD SPRITES //
 	draw_sprite(sprHUD, other.hud, _xoff, _yoff);
 	if(wep.type) draw_sprite(sprAmmoHUD, wep.type, _xoff + 29, _yoff + 19);
+	
+	// MUTATION DRAWING //
+	var _mutation_xoff = _xoff;
+	for(var i = 0; i < array_length(mutations); i++){
+		var _toDraw = mutations[i].on_draw(self, mutations[i]);
+		if(_toDraw != 0){
+			if(is_array(_toDraw)){
+				draw_sprite(_toDraw[0], _toDraw[1], _mutation_xoff + view_wport[0] - 2 - 10, _yoff + 8);
+			}else{
+				draw_sprite(_toDraw, 0, _mutation_xoff + view_wport[0] - 2 - 10, _yoff + 8);
+			}
+			_mutation_xoff -= 16;
+		}
+	}
 }
